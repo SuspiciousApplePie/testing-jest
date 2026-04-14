@@ -5,6 +5,5 @@ export function capitalize(word) {
   const firstLetter = cleanedWord.charAt(0).toUpperCase();
   if (!firstLetter) return "Enter a word";
   const rest = cleanedWord.slice(1);
-  const capitalizedWord = firstLetter.concat(rest);
-  return capitalizedWord;
+  return firstLetter.concat(rest);
 }
