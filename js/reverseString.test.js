@@ -12,4 +12,6 @@ test("Check if it reverse", () => {
   expect(reverseString("()#")).toBe("#)(");
   expect(reverseString(String)).toBe("Enter a string");
   expect(reverseString(class Java {})).toBe("Enter a string");
+  expect(reverseString(0)).toBe("0");
+  expect(reverseString("")).toBe("Enter a non-empty string");
 });
