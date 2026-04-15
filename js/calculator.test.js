@@ -32,4 +32,6 @@ test("Subtraction", () => {
     "Enter valid subtraction values.",
   );
   expect(subtraction(-1, -1)).toBe(0);
+  expect(subtraction("Infinity", 1)).toBe("Enter a valid minuend.");
+  expect(subtraction(1, Infinity)).toBe("Enter a valid subtrahend.");
 });
