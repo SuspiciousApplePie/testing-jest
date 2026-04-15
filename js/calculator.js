@@ -32,3 +32,10 @@ export function subtraction(minuend, subtrahend) {
   if (isFalsySubtrahend) return "Enter a subtrahend.";
   return minuend - subtrahend;
 }
+
+export function multiplication(factor1, factor2) {
+  const isNumberFinite = isFinite(factor1) && isFinite(factor2);
+  const isFalsy = (!factor1 && factor1 !== 0) || (!factor2 && factor2 !== 0);
+  if (isFalsy || !isNumberFinite) return "Enter valid values";
+  return factor1 * factor2;
+}
