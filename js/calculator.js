@@ -39,3 +39,11 @@ export function multiplication(factor1, factor2) {
   if (isFalsy || !isNumberFinite) return "Enter valid values";
   return factor1 * factor2;
 }
+
+export function division(dividend, divisor) {
+  const isNumberFinite = isFinite(dividend) && isFinite(divisor);
+  const isFalsy = (!dividend && dividend !== 0) || (!divisor && divisor !== 0);
+  if (isFalsy || !isNumberFinite) return "Enter valid values";
+  if (divisor === 0) return "Can't divide by zero";
+  return dividend / divisor;
+}

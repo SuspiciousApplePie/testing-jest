@@ -1,4 +1,4 @@
-import { addition, subtraction, multiplication } from "./calculator";
+import { addition, subtraction, multiplication, division } from "./calculator";
 
 test("Addition", () => {
   expect(addition(2, 2)).toBe(4);
@@ -53,4 +53,22 @@ test("Multiplication", () => {
   expect(multiplication(undefined, undefined)).toBe("Enter valid values");
   expect(multiplication("true", "true")).toBe("Enter valid values");
   expect(multiplication(console.log, String)).toBe("Enter valid values");
+});
+
+test("Division", () => {
+  expect(division(5, 2)).toBe(2.5);
+  expect(division(2, 5)).toBe(0.4);
+  expect(division(0, 5)).toBe(0);
+  expect(division(5, 0)).toBe("Can't divide by zero");
+  expect(division(null, null)).toBe("Enter valid values");
+  expect(division(undefined, undefined)).toBe("Enter valid values");
+  expect(division(undefined, 1)).toBe("Enter valid values");
+  expect(division(1, undefined)).toBe("Enter valid values");
+  expect(division("kok", "kok")).toBe("Enter valid values");
+  expect(division(1, "kok")).toBe("Enter valid values");
+  expect(division("kok", 1)).toBe("Enter valid values");
+  expect(division(console.log, String)).toBe("Enter valid values");
+  expect(division(Infinity, Infinity)).toBe("Enter valid values");
+  expect(division(1, Infinity)).toBe("Enter valid values");
+  expect(division(Infinity, 1)).toBe("Enter valid values");
 });
