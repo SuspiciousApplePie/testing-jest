@@ -71,4 +71,5 @@ test("Division", () => {
   expect(division(Infinity, Infinity)).toBe("Enter valid values");
   expect(division(1, Infinity)).toBe("Enter valid values");
   expect(division(Infinity, 1)).toBe("Enter valid values");
+  expect(division("5", "2")).toBe(2.5);
 });
