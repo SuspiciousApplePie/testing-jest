@@ -10,16 +10,25 @@ export function subtraction(minuend, subtrahend) {
     isFinite(minuend),
     isFinite(subtrahend),
   ];
+
+  const [isMinuendBoolean, isSubtrahendBoolean] = [
+    typeof minuend === "boolean",
+    typeof subtrahend === "boolean",
+  ];
   const [isFalsyMinuend, isFalsySubtrahend] = [
     !minuend && minuend !== 0,
     !subtrahend && subtrahend !== 0,
   ];
   if (isFalsyMinuend && isFalsySubtrahend) return "Enter subtraction values.";
-  if (!isFiniteMinuend && !isFiniteSubtrahend)
+  if (
+    (!isFiniteMinuend && !isFiniteSubtrahend) ||
+    (isMinuendBoolean && isSubtrahendBoolean)
+  )
     return "Enter valid subtraction values.";
-  if (!isFiniteMinuend) return "Enter a valid minuend.";
-  if (!isFiniteSubtrahend) return "Enter a valid subtrahend.";
+  if (!isFiniteMinuend || isMinuendBoolean) return "Enter a valid minuend.";
   if (isFalsyMinuend) return "Enter a minuend.";
-  else if (isFalsySubtrahend) return "Enter a subtrahend.";
+  if (!isFiniteSubtrahend || isSubtrahendBoolean)
+    return "Enter a valid subtrahend.";
+  if (isFalsySubtrahend) return "Enter a subtrahend.";
   return minuend - subtrahend;
 }
