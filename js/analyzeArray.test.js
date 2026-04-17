@@ -43,8 +43,10 @@ test("Analyze array", () => {
     "Array contains invalid data",
   );
   expect(analyzeArray([Infinity, 1, 2])).toBe("Array contains invalid data");
+  expect(analyzeArray([1, 1, -Infinity])).toBe("Array contains invalid data");
   expect(analyzeArray([undefined, 1, 2])).toBe("Array contains invalid data");
   expect(analyzeArray([NaN, 1, 2])).toBe("Array contains invalid data");
+  expect(analyzeArray([NaN])).toBe("Array contains invalid data");
   expect(analyzeArray([console.log, 1, null])).toBe(
     "Array contains invalid data",
   );

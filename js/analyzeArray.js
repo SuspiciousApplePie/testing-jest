@@ -46,6 +46,7 @@ function doesArrayContainInvalidData(numbers) {
     numbers.includes(undefined) ||
     numbers.includes(null) ||
     numbers.includes(Infinity) ||
+    numbers.includes(-Infinity) ||
     numbers.includes(NaN) ||
     numbers.includes(true);
 
