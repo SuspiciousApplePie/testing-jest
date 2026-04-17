@@ -4,14 +4,9 @@ export function analyzeArray(numbers) {
     return "Array contains invalid data";
   return numbers.reduce(
     (accumulator, number, index) => {
-      const helpers = [
-        setMinNumber(accumulator, number),
-        setMaxNumber(accumulator, number),
-        setAverage(accumulator, number, index, numbers.length),
-      ];
-      helpers.forEach((helper) => {
-        accumulator = helper;
-      });
+      setMinNumber(accumulator, number);
+      setMaxNumber(accumulator, number);
+      setAverage(accumulator, number, index, numbers.length);
 
       return accumulator;
     },
